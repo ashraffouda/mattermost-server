@@ -94,7 +94,7 @@ func (a *App) TriggerWebhook(payload *model.OutgoingWebhookPayload, hook *model.
 	var body io.Reader
 	var contentType string
 	if hook.ContentType == "application/json" {
-		body = strings.NewReader(payload.ToJSON())
+		body = strings.NewReader(payload.ToJson())
 		contentType = "application/json"
 	} else {
 		body = strings.NewReader(payload.ToFormValues())
